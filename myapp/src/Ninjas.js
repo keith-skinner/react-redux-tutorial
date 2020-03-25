@@ -1,19 +1,12 @@
-import React from "react";
-
-const RenderNinja = (ninja) => {
-    return (
-        <div className="ninja" key={ninja.id}>
-            <div>Name: {ninja.name}</div>
-            <div>Age: {ninja.age}</div>
-            <div>Belt: {ninja.belt}</div>
-        </div>
-    )
-}
+import React from "react"
+import Ninja from './Ninja'
 
 const Ninjas = ({ninjas}) => {
-    const ninjaList = ninjas.map(ninja => {
-        return ninja.age > 20 ? RenderNinja(ninja) : null
-    })
+    const ninjaList = ninjas.map(
+        ninja => (ninja.age > 20)
+        ? (<Ninja ninja={ninja}/>)
+        : null
+    )
     return (
         <div className="ninja-list">
             { ninjaList }
