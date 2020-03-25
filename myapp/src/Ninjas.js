@@ -1,10 +1,10 @@
 import React from "react"
 import Ninja from './Ninja'
 
-const Ninjas = ({ninjas}) => {
+const Ninjas = ({ninjas, deleteNinja}) => {
     const ninjaList = ninjas.map(
         ninja => (ninja.age > 20)
-        ? (<Ninja ninja={ninja}/>)
+        ? (<Ninja ninja={ninja} deleteNinja={deleteNinja} key={ninja.id}/>)
         : null
     )
     return (
